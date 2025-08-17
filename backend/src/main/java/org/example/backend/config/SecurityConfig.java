@@ -107,11 +107,6 @@ public class SecurityConfig {
         http
                 .httpBasic(AbstractHttpConfigurer::disable);
 
-        // 인가
-        http
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll());
-
         // 예외 처리
         http
                 .exceptionHandling(e -> e
@@ -157,10 +152,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 );
 
-
         return http.build();
-
-
     }
 
 }
